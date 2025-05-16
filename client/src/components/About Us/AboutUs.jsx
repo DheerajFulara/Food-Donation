@@ -7,14 +7,12 @@ const AboutUs = () => {
       <div className="info-text">
         <h1 className="info-heading">Share The Meal</h1>
         <p className="info-subheading">
-          In January 2019, Zomato and Feeding India (registered as Hunger
-          Heroes) collaborated to eradicate hunger and malnutrition in India.
-          <br></br>
-          <br></br>
-          All efforts are concerted towards providing better food to more
-          people. Through our targeted interventions for child and maternal
-          malnutrition, we are working towards bringing large-scale systemic
-          transformation in the nutrition landscape of India.
+          This is a place where we aim to feed the hungry by connecting generous donors 
+          with those in need. Through our collective efforts, we gather food donations 
+          from individuals, organizations, and communities to ensure that no one goes to bed hungry.
+          <br /><br />
+          With every contribution, big or small, we bring hope to someone’s plate and strive 
+          toward a future free of hunger and malnutrition. Join us in making a real difference—one meal at a time.
         </p>
       </div>
       <div className="info-img"></div>

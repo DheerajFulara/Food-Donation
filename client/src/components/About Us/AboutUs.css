@@ -1,55 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap');
 
 .aboutus {
     display: flex;
-    height: 60vh;
-    padding: 30px 60px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 50px 60px;
     margin: 40px 30px;
     align-items: center;
     justify-content: space-between;
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+    transition: all 0.3s ease-in-out;
 }
 
 .info-text {
-    width: 50%;
-    height: 55vh;
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    animation: fadeInLeft 1s ease forwards;
 }
 
-
-
 .info-heading {
-    padding-top: 15px;
-    color: black;
+    color: #1f2937;
     font-size: 3rem;
-    margin-bottom: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .info-subheading {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
+    line-height: 1.6;
+    color: #4b5563;
 }
 
 .info-img {
+    flex: 1;
+    min-width: 280px;
+    height: 350px;
+    border-radius: 15px;
     background-image: url("../../assets/work.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 45%;
-    height: 55vh;
-
+    animation: fadeInRight 1s ease forwards;
 }
 
+/* Animations */
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Styles */
 @media (max-width: 998px) {
     .aboutus {
         flex-direction: column;
+        padding: 40px 30px;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .info-img {
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .info-heading {
+        font-size: 2.5rem;
+    }
+
+    .info-subheading {
+        font-size: 1rem;
     }
 }
 
-
 @media (max-width: 520px) {
     .aboutus {
-        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-heading {
+        font-size: 2rem;
+    }
+
+    .info-subheading {
+        font-size: 0.95rem;
+    }
+
+    .info-img {
+        height: 250px;
     }
 }
