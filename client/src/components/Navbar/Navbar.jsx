@@ -5,7 +5,8 @@ import "./Navbar.scss";
 
 const Navbar = ({ token }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();   // prevent page jump
     setShowMenu(!showMenu);
   };
 
@@ -38,7 +39,7 @@ const Navbar = ({ token }) => {
           </li>
           <li>
             <Link
-              to="/donation"
+              to="/our-work"    
               style={{ fontSize: "1.5rem" }}
               onClick={() => setShowMenu(false)}
             >
@@ -47,7 +48,7 @@ const Navbar = ({ token }) => {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="/contact-us"
               style={{ fontSize: "1.5rem" }}
               onClick={() => setShowMenu(false)}
             >

@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home";
 import FoodDonation from "./pages/FoodDonation";
@@ -16,7 +11,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./dashboard/Profile";
 import Food from "./dashboard/Food";
 
-import AboutUs from "./pages/AboutUs";  // Import AboutUs page
+import AboutUs from "./pages/AboutUs";  // About Us page
+import Work from "./pages/Work";        // Our Work page
+import Contact from "./pages/Contact"   // Contact page
 
 function App() {
   const token = localStorage.getItem("token");
@@ -29,12 +26,15 @@ function App() {
   return (
     <>
       {!pathname.includes("/login") &&
-        !pathname.includes("/signup") &&
-        !pathname.includes("/dashboard") && <Navbar token={token} />}
+       !pathname.includes("/signup") &&
+       !pathname.includes("/dashboard") && <Navbar token={token} />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donation" element={<FoodDonation />} />
-        <Route path="/about" element={<AboutUs />} />  {/* About route added */}
+        <Route path="/about" element={<AboutUs />} />        {/* About Us route */}
+        <Route path="/our-work" element={<Work />} />        {/* Our Work route */}
+        <Route path="/contact-us" element={<Contact />} />   {/* Our Contact route */}
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
