@@ -25,7 +25,7 @@ function FoodDonation() {
     console.log(formData);
     // Send the form data to the server using fetch or Axios
     try {
-      const response = await axios.post("http://localhost:3000/fooddonation", {
+      const response = await axios.post("http://localhost:5173/fooddonation", {
         formData,
       });
 

@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import {
   BrowserRouter,
-  Router,
   Routes,
   Route,
-  Link,
   useLocation,
 } from "react-router-dom";
+
 import Home from "./pages/Home";
 import FoodDonation from "./pages/FoodDonation";
 import Login from "./pages/Login";
@@ -17,14 +16,16 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./dashboard/Profile";
 import Food from "./dashboard/Food";
 
+import AboutUs from "./pages/AboutUs";  // Import AboutUs page
+
 function App() {
   const token = localStorage.getItem("token");
-
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
   return (
     <>
       {!pathname.includes("/login") &&
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donation" element={<FoodDonation />} />
+        <Route path="/about" element={<AboutUs />} />  {/* About route added */}
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
